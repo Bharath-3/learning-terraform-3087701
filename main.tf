@@ -11,14 +11,14 @@ data "aws_ami" "app_ami" {
     values = ["hvm"]
   }
 
-  owners = ["979382823631"] # Bitnami
+  owners = ["979382823631"]
 }
 
 resource "aws_instance" "blog" {
-  ami           = data.aws_ami.app_ami.id
+  ami    =   data.aws_ami.app_ami.id
   instance_type = var.instance_type
 
   tags = {
-    Name = "HelloWorld"
+    Name = "Learning Terraform"
   }
 }
